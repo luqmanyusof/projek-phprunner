@@ -1,0 +1,751 @@
+{
+	"programVersion": 2,
+	"versionName": "11.1",
+	"name": "Weather System",
+	"mainDiagram": {
+		"tables": [
+			{
+				"gid": 3972592631,
+				"y": 304,
+				"x": 387,
+				"width": 146.9875030517578,
+				"height": 39.60000228881836
+			},
+			{
+				"gid": 2711928971,
+				"y": 205,
+				"x": 365,
+				"width": 164.8874969482422,
+				"height": 39.60000228881836
+			},
+			{
+				"gid": 1706566184,
+				"y": 10,
+				"x": 885,
+				"width": 162.5625,
+				"height": 179.60000610351562
+			},
+			{
+				"gid": 307457573,
+				"y": 10,
+				"x": 370,
+				"width": 175,
+				"height": 179.60000610351562
+			},
+			{
+				"gid": 3731193179,
+				"y": 205,
+				"x": 200,
+				"width": 136.10000610351562,
+				"height": 39.60000228881836
+			},
+			{
+				"gid": 2648739225,
+				"y": 205,
+				"x": 885,
+				"width": 166.4375,
+				"height": 95.5999984741211
+			},
+			{
+				"gid": 1160315219,
+				"y": 10,
+				"x": 557.6000022888184,
+				"width": 123.60000228881836,
+				"height": 282.60000228881836
+			},
+			{
+				"gid": 2299233748,
+				"y": 10,
+				"x": 710,
+				"width": 146.21250915527344,
+				"height": 123.5999984741211
+			},
+			{
+				"gid": 1185257818,
+				"y": 306,
+				"x": 167,
+				"width": 181.2375030517578,
+				"height": 39.60000228881836
+			},
+			{
+				"gid": 2603917201,
+				"y": 14,
+				"x": 9.599998474121094,
+				"width": 167.2874984741211,
+				"height": 253.60000610351562
+			},
+			{
+				"gid": 2658743394,
+				"y": 10,
+				"x": 200,
+				"width": 142.3000030517578,
+				"height": 179.60000610351562
+			},
+			{
+				"gid": 3159593272,
+				"y": 150,
+				"x": 710,
+				"width": 147.75,
+				"height": 179.60000610351562
+			},
+			{
+				"gid": 705188322,
+				"y": 359,
+				"x": 564.8000106811523,
+				"width": 172.9749984741211,
+				"height": 179.60000610351562
+			}
+		]
+	},
+	"securitySettings": {
+		"sessionControl": {
+			"lifeTime": 15,
+			"sessionName": "Cg7fDIsxsyjFPgeGR3nA",
+			"JWTSecret": "hvxPUFELVqNOujXCL1FF"
+		},
+		"registration": {
+			"remindMethod": 0,
+			"hashAlgorithm": 0,
+			"passwordValidation": {
+				"strong": false,
+				"minimumLength": 8,
+				"uniqueCharacters": 4,
+				"digitsAndSymbols": 2,
+				"upperAndLowerCase": false
+			}
+		},
+		"captchaSettings": {
+			"captchaType": 0,
+			"siteKey": "",
+			"secretKey": "",
+			"passesCount": 5
+		},
+		"emailSettings": {
+			"fromEmail": "13c5322967068a@example.com",
+			"usePHPDefinedSMTP": false,
+			"useBuiltInMailer": false,
+			"SMTPServer": "sandbox.smtp.mailtrap.io",
+			"SMTPPort": 25,
+			"SMTPUser": "13c5322967068a",
+			"SMTPPassword": "11342091c372c3",
+			"securityProtocol": 0
+		},
+		"advancedSecurity": {
+			"allowGuestLogin": false
+		},
+		"auditAndLocking": {
+			"loggingMode": 0,
+			"loggingTable": {
+				"connId": "",
+				"table": ""
+			},
+			"loggingFile": "audit.log",
+			"logSecurityActions": false,
+			"lockAfterUnsuccessfulLogin": false,
+			"enableLocking": false,
+			"lockingTable": {
+				"connId": "",
+				"table": ""
+			},
+			"tables": {}
+		},
+		"twoFactorSettings": {
+			"available": false,
+			"required": false,
+			"enable": true,
+			"remember": true,
+			"types": {},
+			"twoFactorField": "",
+			"emailField": "",
+			"phoneField": "",
+			"codeField": "",
+			"projectName": ""
+		},
+		"staticPermissions": {
+			"groups": {}
+		}
+	},
+	"dbConnections": [
+		{
+			"id": "conn",
+			"name": "weather_system at localhost",
+			"connString": "mysql;localhost;root;;;weather_system;;1"
+		}
+	],
+	"defaultConnID": "conn",
+	"landingSettings": {
+		"table": "Dashboard",
+		"pageId": "dashboard",
+		"page": "dashboard",
+		"url": "Dashboard_dashboard.php?page=dashboard"
+	},
+	"menus": [
+		{
+			"id": "main",
+			"root": {
+				"children": [
+					{
+						"id": "1",
+						"data": {
+							"name": {
+								"table": "record",
+								"type": 6
+							},
+							"pageId": "list",
+							"itemType": 2,
+							"linkType": 0,
+							"iconType": 2,
+							"iconName": "glyphicon-barcode",
+							"showIconType": 2,
+							"table": 2603917201,
+							"pageType": "list"
+						}
+					},
+					{
+						"id": "2",
+						"data": {
+							"name": {
+								"table": "record chart",
+								"type": 6
+							},
+							"pageId": "chart",
+							"itemType": 2,
+							"linkType": 0,
+							"iconType": 2,
+							"iconName": "glyphicon-fire",
+							"showIconType": 2,
+							"table": 2658743394,
+							"pageType": "chart"
+						}
+					},
+					{
+						"id": "3",
+						"data": {
+							"name": {
+								"table": "chart_shah_alam",
+								"type": 6
+							},
+							"pageId": "chart",
+							"itemType": 2,
+							"linkType": 0,
+							"iconType": 2,
+							"iconName": "glyphicon-heart-empty",
+							"showIconType": 2,
+							"table": 307457573,
+							"pageType": "chart"
+						}
+					},
+					{
+						"id": "4",
+						"data": {
+							"name": {
+								"table": "Kajang",
+								"type": 6
+							},
+							"pageId": "list",
+							"itemType": 2,
+							"linkType": 0,
+							"iconType": 2,
+							"iconName": "glyphicon-star-empty",
+							"showIconType": 2,
+							"table": 1160315219,
+							"pageType": "list"
+						}
+					},
+					{
+						"id": "5",
+						"data": {
+							"name": {
+								"table": "Kajang chart",
+								"type": 6
+							},
+							"pageId": "chart",
+							"itemType": 2,
+							"linkType": 0,
+							"iconType": 2,
+							"iconName": "glyphicon-send",
+							"showIconType": 2,
+							"table": 2299233748,
+							"pageType": "chart"
+						}
+					},
+					{
+						"id": "6",
+						"data": {
+							"name": {
+								"table": "chart_selayang",
+								"type": 6
+							},
+							"pageId": "chart",
+							"itemType": 2,
+							"linkType": 0,
+							"iconType": 2,
+							"iconName": "glyphicon-hand-right",
+							"showIconType": 2,
+							"table": 1706566184,
+							"pageType": "chart"
+						}
+					},
+					{
+						"id": "7",
+						"data": {
+							"name": {
+								"table": "record report",
+								"type": 6
+							},
+							"pageId": "report",
+							"itemType": 2,
+							"linkType": 0,
+							"iconType": 2,
+							"iconName": "glyphicon-headphones",
+							"showIconType": 2,
+							"table": 3159593272,
+							"pageType": "report"
+						}
+					},
+					{
+						"id": "8",
+						"data": {
+							"name": {
+								"table": "Dashboard",
+								"type": 6
+							},
+							"pageId": "dashboard",
+							"itemType": 2,
+							"linkType": 0,
+							"iconType": 2,
+							"iconName": "glyphicon-paperclip",
+							"showIconType": 2,
+							"table": 3731193179,
+							"pageType": "dashboard"
+						}
+					},
+					{
+						"id": "9",
+						"data": {
+							"name": {
+								"table": "3 location latest",
+								"type": 6
+							},
+							"pageId": "list",
+							"itemType": 2,
+							"linkType": 0,
+							"iconType": 2,
+							"iconName": "glyphicon-briefcase",
+							"showIconType": 2,
+							"table": 2711928971,
+							"pageType": "list"
+						}
+					},
+					{
+						"id": "10",
+						"data": {
+							"name": {
+								"table": "latest_temp_3_loc",
+								"type": 6
+							},
+							"pageId": "list",
+							"itemType": 2,
+							"linkType": 0,
+							"table": 1185257818,
+							"pageType": "list"
+						}
+					},
+					{
+						"id": "11",
+						"data": {
+							"name": {
+								"table": "2_loc_humid",
+								"type": 6
+							},
+							"pageId": "list",
+							"itemType": 2,
+							"linkType": 0,
+							"table": 3972592631,
+							"pageType": "list"
+						}
+					},
+					{
+						"id": "12",
+						"data": {
+							"name": {
+								"table": "weather_report",
+								"type": 6
+							},
+							"pageId": "report",
+							"itemType": 2,
+							"linkType": 0,
+							"table": 705188322,
+							"pageType": "report"
+						}
+					},
+					{
+						"id": "13",
+						"data": {
+							"name": {
+								"table": "Dashboard filter",
+								"type": 6
+							},
+							"pageId": "dashboard",
+							"itemType": 2,
+							"linkType": 0,
+							"table": 2648739225,
+							"pageType": "dashboard"
+						}
+					}
+				]
+			}
+		}
+	],
+	"globalPages": [
+		{
+			"id": "menu",
+			"type": "menu",
+			"layoutId": "topbar",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "empty-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"supertop": {
+					"modelId": "menu-topbar-menu",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"logo",
+								"menu"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "welcome",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"welcome_item",
+								"welcome_item1",
+								"welcome_item2",
+								"welcome_item3",
+								"welcome_item4",
+								"welcome_item5",
+								"welcome_item6",
+								"welcome_item7",
+								"welcome_item8",
+								"welcome_item9",
+								"welcome_item10",
+								"welcome_item11",
+								"welcome_item12"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"logo": {
+					"type": "logo"
+				},
+				"menu": {
+					"type": "menu"
+				},
+				"welcome_item": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "record",
+					"linkPage": "list",
+					"linkText": {
+						"table": "record",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "barcode"
+					},
+					"linkComments": {
+						"text": "Record description",
+						"type": 0
+					},
+					"background": "#d2691e",
+					"linkType": 0
+				},
+				"welcome_item1": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "record chart",
+					"linkPage": "chart",
+					"linkText": {
+						"table": "record chart",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "fire"
+					},
+					"linkComments": {
+						"text": "Record Chart description",
+						"type": 0
+					},
+					"background": "#d2691e",
+					"linkType": 0
+				},
+				"welcome_item2": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "chart_shah_alam",
+					"linkPage": "chart",
+					"linkText": {
+						"table": "chart_shah_alam",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "heart-empty"
+					},
+					"linkComments": {
+						"text": "Chart Shah Alam description",
+						"type": 0
+					},
+					"background": "#d2691e",
+					"linkType": 0
+				},
+				"welcome_item3": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "Kajang",
+					"linkPage": "list",
+					"linkText": {
+						"table": "Kajang",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "star-empty"
+					},
+					"linkComments": {
+						"text": "Kajang description",
+						"type": 0
+					},
+					"background": "#db7093",
+					"linkType": 0
+				},
+				"welcome_item4": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "Kajang chart",
+					"linkPage": "chart",
+					"linkText": {
+						"table": "Kajang chart",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "send"
+					},
+					"linkComments": {
+						"text": "Kajang Chart description",
+						"type": 0
+					},
+					"background": "#db7093",
+					"linkType": 0
+				},
+				"welcome_item5": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "chart_selayang",
+					"linkPage": "chart",
+					"linkText": {
+						"table": "chart_selayang",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "hand-right"
+					},
+					"background": "#d2691e",
+					"linkType": 0
+				},
+				"welcome_item6": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "record report",
+					"linkPage": "report",
+					"linkText": {
+						"table": "record report",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "headphones"
+					},
+					"background": "#d2691e",
+					"linkType": 0
+				},
+				"welcome_item7": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "Dashboard",
+					"linkPage": "dashboard",
+					"linkText": {
+						"table": "Dashboard",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "paperclip"
+					},
+					"background": "#cfae83",
+					"linkType": 0
+				},
+				"welcome_item8": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "3 location latest",
+					"linkPage": "list",
+					"linkText": {
+						"table": "3 location latest",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "briefcase"
+					},
+					"background": "#008b8b",
+					"linkType": 0
+				},
+				"welcome_item9": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "latest_temp_3_loc",
+					"linkPage": "list",
+					"linkText": {
+						"table": "latest_temp_3_loc",
+						"type": 6
+					},
+					"background": "#5f9ea0",
+					"linkType": 0
+				},
+				"welcome_item10": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "2_loc_humid",
+					"linkPage": "list",
+					"linkText": {
+						"table": "2_loc_humid",
+						"type": 6
+					},
+					"background": "#e07878",
+					"linkType": 0
+				},
+				"welcome_item11": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "weather_report",
+					"linkPage": "report",
+					"linkText": {
+						"table": "weather_report",
+						"type": 6
+					},
+					"background": "#d2691e",
+					"linkType": 0
+				},
+				"welcome_item12": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "Dashboard filter",
+					"linkPage": "dashboard",
+					"linkText": {
+						"table": "Dashboard filter",
+						"type": 6
+					},
+					"background": "#e8926f",
+					"linkType": 0
+				}
+			},
+			"dbProps": {},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"welcomePageStay": true,
+			"listTotals": 1,
+			"title": {}
+		}
+	],
+	"projectStyle": {
+		"size": "small",
+		"sidebarColor": "light",
+		"sidebarTheme": "primary",
+		"topbarTheme": "info",
+		"logoTheme": "success",
+		"sidebarCustomThemeColor": "legacy",
+		"topbarCustomThemeColor": "legacy",
+		"logoCustomThemeColor": "legacy",
+		"customCss": ".r-grid {\r\nfont-size: 12px;\r\n}\r\n",
+		"gpHeaderBg": "legacy",
+		"gpHeaderColor": "legacy",
+		"gpFooterBg": "legacy",
+		"gpPanelBorder": "legacy",
+		"gpBorderColor": "legacy",
+		"gpInnerBorder": "legacy",
+		"gpInnerBorderColor": "legacy",
+		"gcOddBg": "legacy",
+		"gcOddColor": "legacy",
+		"gcEvenBg": "legacy",
+		"gcEvenColor": "legacy",
+		"gcRolloverHighlightBg": "legacy",
+		"gcRolloverHighlightColor": "legacy"
+	},
+	"settingsTable": {
+		"connId": "",
+		"table": ""
+	},
+	"messages": {},
+	"projectLogo": {},
+	"cookieBannerText": {}
+}

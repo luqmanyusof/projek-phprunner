@@ -1,0 +1,411 @@
+{
+	"type": 4,
+	"name": "Dashboard",
+	"shortTableName": "Dashboard",
+	"detailsBadgeColor": "cfae83",
+	"dashSearchFields": [
+		{
+			"refs": [
+				{
+					"table": "chart_shah_alam",
+					"field": "id"
+				}
+			],
+			"labels": {
+				"English": "Id"
+			},
+			"field": "chart_shah_alam_id"
+		},
+		{
+			"refs": [
+				{
+					"table": "chart_shah_alam",
+					"field": "location"
+				}
+			],
+			"labels": {
+				"English": "Location"
+			},
+			"field": "chart_shah_alam_location"
+		},
+		{
+			"refs": [
+				{
+					"table": "chart_shah_alam",
+					"field": "temperature"
+				}
+			],
+			"labels": {
+				"English": "Temperature"
+			},
+			"field": "chart_shah_alam_temperature"
+		},
+		{
+			"refs": [
+				{
+					"table": "chart_shah_alam",
+					"field": "humidity"
+				}
+			],
+			"labels": {
+				"English": "Humidity"
+			},
+			"field": "chart_shah_alam_humidity"
+		},
+		{
+			"refs": [
+				{
+					"table": "chart_shah_alam",
+					"field": "datetime"
+				}
+			],
+			"labels": {
+				"English": "Datetime"
+			},
+			"field": "chart_shah_alam_datetime"
+		},
+		{
+			"refs": [
+				{
+					"table": "record",
+					"field": "id"
+				}
+			],
+			"labels": {
+				"English": "Id"
+			},
+			"field": "record_id"
+		},
+		{
+			"refs": [
+				{
+					"table": "record",
+					"field": "location"
+				}
+			],
+			"labels": {
+				"English": "Location"
+			},
+			"field": "record_location"
+		},
+		{
+			"refs": [
+				{
+					"table": "record",
+					"field": "temperature"
+				}
+			],
+			"labels": {
+				"English": "Temperature"
+			},
+			"field": "record_temperature"
+		},
+		{
+			"refs": [
+				{
+					"table": "record",
+					"field": "humidity"
+				}
+			],
+			"labels": {
+				"English": "Humidity"
+			},
+			"field": "record_humidity"
+		},
+		{
+			"refs": [
+				{
+					"table": "record",
+					"field": "datetime"
+				}
+			],
+			"labels": {
+				"English": "Datetime"
+			},
+			"field": "record_datetime"
+		},
+		{
+			"refs": [
+				{
+					"table": "2_loc_humid",
+					"field": "location"
+				}
+			],
+			"labels": {
+				"English": "Location"
+			},
+			"field": "2_loc_humid_location"
+		},
+		{
+			"refs": [
+				{
+					"table": "2_loc_humid",
+					"field": "humidity"
+				}
+			],
+			"labels": {
+				"English": "Humidity"
+			},
+			"field": "2_loc_humid_humidity"
+		}
+	],
+	"pages": [
+		{
+			"id": "dashboard",
+			"type": "dashboard",
+			"layoutId": "leftbar",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"grid": {
+					"modelId": "dashboard-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c"
+								}
+							],
+							"section": ""
+						},
+						{
+							"section": "",
+							"cells": [
+								{
+									"cell": "c2"
+								},
+								{
+									"cell": "c3"
+								}
+							]
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"dashboard-item"
+							]
+						},
+						"c": {
+							"model": "c1",
+							"items": [
+								"dashboard-item1"
+							]
+						},
+						"c2": {
+							"model": "c1",
+							"items": [
+								"dashboard-item2"
+							]
+						},
+						"c3": {
+							"model": "c1",
+							"items": [
+								"dashboard-item3"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"left": {
+					"modelId": "leftbar-dashboard",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c0"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c0": {
+							"model": "c0",
+							"items": [
+								"logo"
+							]
+						},
+						"c1": {
+							"model": "c1",
+							"items": [
+								"menu"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"supertop": {
+					"modelId": "leftbar-top-dashboard",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"expand_menu_button",
+								"collapse_button",
+								"breadcrumb"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"simple_search"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "dashboard-top",
+					"grid": [],
+					"cells": {},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"breadcrumb": {
+					"type": "breadcrumb"
+				},
+				"logo": {
+					"type": "logo"
+				},
+				"menu": {
+					"type": "menu"
+				},
+				"simple_search": {
+					"type": "simple_search"
+				},
+				"expand_menu_button": {
+					"type": "expand_menu_button"
+				},
+				"collapse_button": {
+					"type": "collapse_button"
+				},
+				"dashboard-item1": {
+					"type": "dashboard-item",
+					"table": 307457573,
+					"dashType": 1,
+					"dashName": "chart_shah_alam_chart",
+					"bsStyle": "primary",
+					"panelType": 1,
+					"icon": {
+						"fa": "bookmark"
+					},
+					"viewTab": true,
+					"editTab": true,
+					"addTab": true,
+					"initialTab": 0,
+					"hiddenDetails": {},
+					"detailsOptions": [],
+					"mapUpdateGridWhenMoved": true,
+					"height": "500px"
+				},
+				"dashboard-item2": {
+					"type": "dashboard-item",
+					"table": 2603917201,
+					"dashType": 0,
+					"dashName": "record_grid",
+					"bsStyle": "primary",
+					"panelType": 1,
+					"icon": {
+						"glyph": "shopping-cart"
+					},
+					"viewTab": true,
+					"editTab": true,
+					"addTab": true,
+					"initialTab": 0,
+					"hiddenDetails": {},
+					"detailsOptions": [],
+					"mapUpdateGridWhenMoved": true,
+					"height": "500px"
+				},
+				"dashboard-item3": {
+					"type": "dashboard-item",
+					"table": 1185257818,
+					"dashType": 0,
+					"dashName": "latest_temp_3_loc_grid",
+					"bsStyle": "primary",
+					"panelType": 1,
+					"icon": {
+						"fa": "barcode"
+					},
+					"viewTab": true,
+					"editTab": true,
+					"addTab": true,
+					"initialTab": 0,
+					"hiddenDetails": {},
+					"detailsOptions": [],
+					"mapUpdateGridWhenMoved": true,
+					"height": "500px"
+				},
+				"dashboard-item": {
+					"type": "dashboard-item",
+					"table": 3972592631,
+					"dashType": 0,
+					"dashName": "2_loc_humid_grid",
+					"bsStyle": "primary",
+					"panelType": 1,
+					"icon": {
+						"fa": "book"
+					},
+					"viewTab": true,
+					"editTab": true,
+					"addTab": true,
+					"initialTab": 0,
+					"hiddenDetails": {},
+					"detailsOptions": [],
+					"mapUpdateGridWhenMoved": true,
+					"height": "500px"
+				}
+			},
+			"dbProps": {},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		}
+	],
+	"geoCoding": {
+		"enabled": false,
+		"latField": "",
+		"lonField": "",
+		"addressFields": []
+	},
+	"caption": {
+		"English": "Dashboard"
+	}
+}

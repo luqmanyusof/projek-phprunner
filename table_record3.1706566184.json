@@ -1,0 +1,433 @@
+{
+	"sql": "SELECT\r\n\tid,\r\n\tlocation,\r\n\ttemperature,\r\n\thumidity,\r\n\t`datetime`\r\nFROM\r\n\t`record`\r\nWhere location = 'Selayang'",
+	"type": 3,
+	"connId": "conn",
+	"originalTable": "record",
+	"name": "chart_selayang",
+	"shortTableName": "record3",
+	"dbType": 0,
+	"chartSettings": {
+		"shape": "Cone",
+		"grid": true,
+		"labelField": "datetime",
+		"type": "Area",
+		"is3D": true,
+		"dataSeries": [
+			{
+				"dataField": "temperature",
+				"total": null
+			}
+		]
+	},
+	"keyFields": [
+		"id"
+	],
+	"detailsBadgeColor": "d2691e",
+	"fields": [
+		{
+			"name": "id",
+			"sqlExpression": "id",
+			"index": 1,
+			"strField": "id",
+			"type": 3,
+			"autoinc": true,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "Id"
+			},
+			"tableName": "record"
+		},
+		{
+			"name": "location",
+			"sqlExpression": "location",
+			"index": 2,
+			"strField": "location",
+			"type": 200,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "Location"
+			},
+			"tableName": "record"
+		},
+		{
+			"name": "temperature",
+			"sqlExpression": "temperature",
+			"index": 3,
+			"strField": "temperature",
+			"type": 5,
+			"viewFormats": [
+				{
+					"format": "Number"
+				}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "Temperature"
+			},
+			"tableName": "record"
+		},
+		{
+			"name": "humidity",
+			"sqlExpression": "humidity",
+			"index": 4,
+			"strField": "humidity",
+			"type": 5,
+			"viewFormats": [
+				{
+					"format": "Number"
+				}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "Humidity"
+			},
+			"tableName": "record"
+		},
+		{
+			"name": "datetime",
+			"sqlExpression": "`datetime`",
+			"index": 5,
+			"strField": "datetime",
+			"type": 135,
+			"viewFormats": [
+				{
+					"format": "Short Date"
+				}
+			],
+			"editFormats": [
+				{
+					"format": "Readonly",
+					"dateEditType": 11
+				}
+			],
+			"label": {
+				"English": "Datetime"
+			},
+			"tableName": "record"
+		}
+	],
+	"eventHandlers": [
+		{
+			"eventId": "EVENT_JS_MODIFY_CHART",
+			"pageType": "chart",
+			"code": "// Place event code here.\n// Use \"Add Action\" button to add code snippets.\n\nvar series = chart.getSeriesAt(0);  \nseries.labels(true);  \nseries.labels().fontSize(15);  \nseries.labels().fontColor(\"#ffff00\");\nseries.stroke(\"#0000ff\")\n\nvar background = series.labels().background();\nbackground.enabled(true);\nbackground.fill(\"#EEEEEE 0.8\");\nbackground.stroke(\"#888888\");\nbackground.cornerType(\"round\");\nbackground.corners(5);\n\nvar currentScroller = chart.xScroller();  \ncurrentScroller.enabled(true);"
+		}
+	],
+	"dbTableInfo": {
+		"type": 0,
+		"foreignKeys": [],
+		"fields": [
+			{
+				"name": "id",
+				"type": 3,
+				"size": 11,
+				"scale": 0,
+				"typeName": "int(11)",
+				"nullable": false,
+				"autoinc": true,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "location",
+				"type": 200,
+				"size": 250,
+				"scale": 0,
+				"typeName": "varchar(250)",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "temperature",
+				"type": 5,
+				"size": 0,
+				"scale": 0,
+				"typeName": "double",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "humidity",
+				"type": 5,
+				"size": 0,
+				"scale": 0,
+				"typeName": "double",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "datetime",
+				"type": 135,
+				"size": 0,
+				"scale": 0,
+				"typeName": "datetime",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			}
+		],
+		"primaryKeys": [
+			"id"
+		],
+		"uniqueFields": [],
+		"name": "record"
+	},
+	"pages": [
+		{
+			"id": "chart",
+			"type": "chart",
+			"layoutId": "leftbar",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "empty-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "empty-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"left": {
+					"modelId": "leftbar-menu",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c0"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c0": {
+							"model": "c0",
+							"items": [
+								"logo"
+							]
+						},
+						"c1": {
+							"model": "c1",
+							"items": [
+								"menu",
+								"search_panel"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"supertop": {
+					"modelId": "leftbar-top-chart",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"expand_menu_button",
+								"collapse_button",
+								"breadcrumb"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"simple_search",
+								"list_options"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "chart-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"chart"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "list-sidebar-top",
+					"grid": [],
+					"cells": {},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"breadcrumb": {
+					"type": "breadcrumb"
+				},
+				"logo": {
+					"type": "logo"
+				},
+				"menu": {
+					"type": "menu"
+				},
+				"simple_search": {
+					"type": "simple_search"
+				},
+				"search_panel": {
+					"type": "search_panel",
+					"items": [
+						"search_panel_field4",
+						"search_panel_field3",
+						"search_panel_field2"
+					],
+					"_flexiblePanel": true
+				},
+				"list_options": {
+					"type": "list_options",
+					"items": [
+						"show_search_panel",
+						"hide_search_panel"
+					]
+				},
+				"show_search_panel": {
+					"type": "show_search_panel"
+				},
+				"hide_search_panel": {
+					"type": "hide_search_panel"
+				},
+				"search_panel_field2": {
+					"field": "temperature",
+					"type": "search_panel_field"
+				},
+				"search_panel_field3": {
+					"field": "humidity",
+					"type": "search_panel_field"
+				},
+				"search_panel_field4": {
+					"field": "datetime",
+					"type": "search_panel_field"
+				},
+				"chart": {
+					"type": "chart",
+					"table": 1706566184,
+					"icon": {
+						"glyph": "signal"
+					}
+				},
+				"expand_menu_button": {
+					"type": "expand_menu_button"
+				},
+				"collapse_button": {
+					"type": "collapse_button"
+				}
+			},
+			"dbProps": {},
+			"version": 13,
+			"pageWidth": "full",
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		}
+	],
+	"geoCoding": {
+		"enabled": false,
+		"latField": "",
+		"lonField": "",
+		"addressFields": []
+	},
+	"caption": {
+		"English": "Chart Selayang"
+	}
+}

@@ -1,0 +1,934 @@
+{
+	"sql": "SELECT\r\n\tid,\r\n\tlocation,\r\n\ttemperature,\r\n\thumidity,\r\n\t`datetime`\r\nFROM\r\n\t`record`",
+	"type": 2,
+	"connId": "conn",
+	"originalTable": "record",
+	"name": "weather_report",
+	"shortTableName": "record5",
+	"dbType": 0,
+	"keyFields": [
+		"id"
+	],
+	"detailsBadgeColor": "d2691e",
+	"fields": [
+		{
+			"name": "id",
+			"sqlExpression": "id",
+			"index": 1,
+			"strField": "id",
+			"type": 3,
+			"autoinc": true,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "Id"
+			},
+			"tableName": "record"
+		},
+		{
+			"name": "location",
+			"sqlExpression": "location",
+			"index": 2,
+			"strField": "location",
+			"type": 200,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "Location"
+			},
+			"tableName": "record"
+		},
+		{
+			"name": "temperature",
+			"sqlExpression": "temperature",
+			"index": 3,
+			"strField": "temperature",
+			"type": 5,
+			"viewFormats": [
+				{
+					"format": "Number"
+				}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "Temperature"
+			},
+			"tableName": "record"
+		},
+		{
+			"name": "humidity",
+			"sqlExpression": "humidity",
+			"index": 4,
+			"strField": "humidity",
+			"type": 5,
+			"viewFormats": [
+				{
+					"format": "Number"
+				}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "Humidity"
+			},
+			"tableName": "record"
+		},
+		{
+			"name": "datetime",
+			"sqlExpression": "`datetime`",
+			"index": 5,
+			"strField": "datetime",
+			"type": 135,
+			"viewFormats": [
+				{
+					"format": "Short Date"
+				}
+			],
+			"editFormats": [
+				{
+					"format": "Date",
+					"dateEditType": 11
+				}
+			],
+			"label": {
+				"English": "Datetime"
+			},
+			"tableName": "record"
+		}
+	],
+	"eventHandlers": [
+		{
+			"eventId": "EVENT_AFTERADD",
+			"pageType": "add",
+			"code": "// Place event code here.\n// Use \"Add Action\" button to add code snippets.\n\n$email=\"test@test.com\";\n$message=\"New record has been addedd for location \" . $values[\"location\"];\n$subject=\"New Record \" . $values[\"id\"] ;\nrunner_mail(array('to' => $email, 'subject' => $subject,\n'body' => $message));"
+		}
+	],
+	"dbTableInfo": {
+		"type": 0,
+		"foreignKeys": [],
+		"fields": [
+			{
+				"name": "id",
+				"type": 3,
+				"size": 11,
+				"scale": 0,
+				"typeName": "int(11)",
+				"nullable": false,
+				"autoinc": true,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "location",
+				"type": 200,
+				"size": 250,
+				"scale": 0,
+				"typeName": "varchar(250)",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "temperature",
+				"type": 5,
+				"size": 0,
+				"scale": 0,
+				"typeName": "double",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "humidity",
+				"type": 5,
+				"size": 0,
+				"scale": 0,
+				"typeName": "double",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "datetime",
+				"type": 135,
+				"size": 0,
+				"scale": 0,
+				"typeName": "datetime",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			}
+		],
+		"primaryKeys": [
+			"id"
+		],
+		"uniqueFields": [],
+		"name": "record"
+	},
+	"pages": [
+		{
+			"id": "export",
+			"type": "export",
+			"layoutId": "first",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"supertop": {
+					"modelId": "panel-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "export-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"export_header"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "export-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"export_field",
+								"export_field1",
+								"export_field2",
+								"export_field3",
+								"export_field4"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"footer": {
+					"modelId": "export-footer",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"export_export",
+								"export_cancel"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"export_header": {
+					"type": "export_header"
+				},
+				"export_export": {
+					"type": "export_export"
+				},
+				"export_cancel": {
+					"type": "export_cancel"
+				},
+				"export_field": {
+					"field": "id",
+					"type": "export_field"
+				},
+				"export_field1": {
+					"field": "location",
+					"type": "export_field"
+				},
+				"export_field2": {
+					"field": "temperature",
+					"type": "export_field"
+				},
+				"export_field3": {
+					"field": "humidity",
+					"type": "export_field"
+				},
+				"export_field4": {
+					"field": "datetime",
+					"type": "export_field"
+				}
+			},
+			"dbProps": {},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {},
+			"exportFormat": 2,
+			"exportDelimiter": ",",
+			"exportSelectDelimiter": false,
+			"exportSelectFields": false
+		},
+		{
+			"id": "report",
+			"type": "report",
+			"layoutId": "leftbar",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "report-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"details_found",
+								"page_size",
+								"print_panel",
+								"export_report_pdf"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "report-below-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"pagination"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"left": {
+					"modelId": "leftbar-menu",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c0"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c0": {
+							"model": "c0",
+							"items": [
+								"logo"
+							]
+						},
+						"c1": {
+							"model": "c1",
+							"items": [
+								"menu",
+								"search_panel"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"supertop": {
+					"modelId": "leftbar-top-chart",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"expand_menu_button",
+								"collapse_button",
+								"breadcrumb"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"simple_search",
+								"list_options"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "report-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"report_group_field",
+								"report_group_field1"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"report_grid_field2",
+								"report_grid_field"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1,
+					"reportInfo": {
+						"groupFields": [
+							{
+								"interval": 0,
+								"summary": true,
+								"field": "location",
+								"color": {
+									"header": "bed9d9",
+									"summary": "e0ffff"
+								},
+								"axis": 0
+							},
+							{
+								"interval": 0,
+								"summary": true,
+								"field": "datetime",
+								"color": {
+									"header": "93b8c4",
+									"summary": "add8e6"
+								},
+								"axis": 0
+							}
+						],
+						"fields": [
+							{
+								"field": "temperature",
+								"grid": true,
+								"min": true,
+								"max": true,
+								"sum": false,
+								"avg": true
+							},
+							{
+								"field": "humidity",
+								"grid": true,
+								"min": false,
+								"max": false,
+								"avg": false,
+								"sum": false
+							}
+						],
+						"showData": true,
+						"pageSummary": false,
+						"globalSummary": false,
+						"crosstab": false,
+						"layout": "align"
+					}
+				},
+				"top": {
+					"modelId": "list-sidebar-top",
+					"grid": [],
+					"cells": {},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"page_size": {
+					"type": "page_size"
+				},
+				"details_found": {
+					"type": "details_found"
+				},
+				"breadcrumb": {
+					"type": "breadcrumb"
+				},
+				"logo": {
+					"type": "logo"
+				},
+				"menu": {
+					"type": "menu"
+				},
+				"simple_search": {
+					"type": "simple_search"
+				},
+				"pagination": {
+					"type": "pagination"
+				},
+				"list_options": {
+					"type": "list_options",
+					"items": [
+						"show_search_panel",
+						"hide_search_panel",
+						"-",
+						"export_report_excel",
+						"export_report_word"
+					]
+				},
+				"export_report_excel": {
+					"type": "export_report_excel"
+				},
+				"export_report_word": {
+					"type": "export_report_word"
+				},
+				"report_grid_field2": {
+					"field": "temperature",
+					"type": "report_grid_field",
+					"reportAvg": true,
+					"reportMin": true,
+					"reportMax": true,
+					"reportSum": false
+				},
+				"search_panel": {
+					"type": "search_panel",
+					"items": [
+						"search_panel_field",
+						"search_panel_field4",
+						"search_panel_field3",
+						"search_panel_field2",
+						"search_panel_field1"
+					],
+					"_flexiblePanel": true
+				},
+				"show_search_panel": {
+					"type": "show_search_panel"
+				},
+				"-": {
+					"type": "-"
+				},
+				"hide_search_panel": {
+					"type": "hide_search_panel"
+				},
+				"search_panel_field": {
+					"field": "id",
+					"type": "search_panel_field"
+				},
+				"search_panel_field1": {
+					"field": "location",
+					"type": "search_panel_field"
+				},
+				"search_panel_field2": {
+					"field": "temperature",
+					"type": "search_panel_field"
+				},
+				"search_panel_field3": {
+					"field": "humidity",
+					"type": "search_panel_field"
+				},
+				"search_panel_field4": {
+					"field": "datetime",
+					"type": "search_panel_field"
+				},
+				"expand_menu_button": {
+					"type": "expand_menu_button"
+				},
+				"collapse_button": {
+					"type": "collapse_button"
+				},
+				"print_panel": {
+					"type": "print_panel",
+					"items": [
+						"print_scope",
+						"print_records",
+						"print_button"
+					]
+				},
+				"print_scope": {
+					"type": "print_scope"
+				},
+				"print_button": {
+					"type": "print_button"
+				},
+				"print_records": {
+					"type": "print_records"
+				},
+				"report_grid_field": {
+					"field": "humidity",
+					"type": "report_grid_field",
+					"reportAvg": false,
+					"reportMin": false,
+					"reportMax": false,
+					"reportSum": false
+				},
+				"export_report_pdf": {
+					"type": "export_report_pdf",
+					"targetPages": [],
+					"splitModes": [],
+					"scopes": [],
+					"icon": {}
+				},
+				"report_group_field": {
+					"field": "location",
+					"type": "report_group_field",
+					"summary": true,
+					"axis": 0,
+					"interval": 0
+				},
+				"report_group_field1": {
+					"field": "datetime",
+					"type": "report_group_field",
+					"summary": true,
+					"axis": 0,
+					"interval": 0
+				}
+			},
+			"dbProps": {},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "rprint",
+			"type": "rprint",
+			"layoutId": "basic",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "print-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"print_pages"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "print-below-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "print-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c2": {
+							"model": "c2",
+							"items": [
+								"print_header",
+								"print_subheader"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "report-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"report_group_field",
+								"report_group_field1"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"report_grid_field2",
+								"report_grid_field"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1,
+					"reportInfo": {
+						"groupFields": [
+							{
+								"interval": 0,
+								"summary": true,
+								"field": "location",
+								"color": {
+									"header": "bed9d9",
+									"summary": "e0ffff"
+								},
+								"axis": 0
+							},
+							{
+								"interval": 0,
+								"summary": true,
+								"field": "datetime",
+								"color": {
+									"header": "93b8c4",
+									"summary": "add8e6"
+								},
+								"axis": 0
+							}
+						],
+						"fields": [
+							{
+								"field": "temperature",
+								"grid": true,
+								"min": true,
+								"max": true,
+								"sum": false,
+								"avg": true
+							},
+							{
+								"field": "humidity",
+								"grid": true,
+								"min": false,
+								"max": false,
+								"avg": false,
+								"sum": false
+							}
+						],
+						"showData": true,
+						"pageSummary": false,
+						"globalSummary": false,
+						"crosstab": false,
+						"layout": "align"
+					}
+				}
+			},
+			"items": {
+				"print_header": {
+					"type": "print_header"
+				},
+				"print_subheader": {
+					"type": "print_subheader"
+				},
+				"print_pages": {
+					"type": "print_pages"
+				},
+				"report_grid_field2": {
+					"field": "temperature",
+					"type": "report_grid_field",
+					"reportAvg": true,
+					"reportMin": true,
+					"reportMax": true,
+					"reportSum": false
+				},
+				"report_grid_field": {
+					"field": "humidity",
+					"type": "report_grid_field",
+					"reportAvg": false,
+					"reportMin": false,
+					"reportMax": false,
+					"reportSum": false
+				},
+				"report_group_field": {
+					"field": "location",
+					"type": "report_group_field",
+					"summary": true,
+					"axis": 0,
+					"interval": 0
+				},
+				"report_group_field1": {
+					"field": "datetime",
+					"type": "report_group_field",
+					"summary": true,
+					"axis": 0,
+					"interval": 0
+				}
+			},
+			"dbProps": {},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		}
+	],
+	"geoCoding": {
+		"enabled": false,
+		"latField": "",
+		"lonField": "",
+		"addressFields": []
+	},
+	"caption": {
+		"English": "Weather Report"
+	}
+}

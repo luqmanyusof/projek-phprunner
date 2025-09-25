@@ -1,0 +1,354 @@
+{
+	"type": 9,
+	"connId": "conn",
+	"name": "Kajang chart",
+	"shortTableName": "Kajang1",
+	"chartSettings": {
+		"labelField": "id",
+		"type": "2DBar",
+		"dataSeries": [
+			{
+				"dataField": "temp"
+			},
+			{
+				"dataField": "humid"
+			}
+		]
+	},
+	"detailsBadgeColor": "db7093",
+	"fields": [
+		{
+			"name": "temp",
+			"strField": "temperature",
+			"type": 131,
+			"viewFormats": [
+				{
+					"format": "Number"
+				}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "Temp"
+			},
+			"tableName": "Kajang"
+		},
+		{
+			"name": "humid",
+			"strField": "humidity",
+			"type": 3,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "Humid"
+			},
+			"tableName": "Kajang"
+		},
+		{
+			"name": "id",
+			"strField": "id",
+			"type": 3,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "Id"
+			},
+			"tableName": "Kajang"
+		}
+	],
+	"dataSourceOperations": [
+		{
+			"type": "selectList",
+			"subtype": "sql",
+			"enabled": true,
+			"sql": "SELECT * FROM record where location = \"Kajang\"",
+			"payload": [],
+			"payloadFormat": 4
+		},
+		{
+			"subtype": "sql",
+			"sql": "select * from record where id = :{id}",
+			"type": "selectOne",
+			"payload": [],
+			"payloadFormat": 4,
+			"enabled": true
+		},
+		{
+			"subtype": "sql",
+			"type": "delete",
+			"payload": [],
+			"payloadFormat": 4
+		},
+		{
+			"subtype": "sql",
+			"enabled": true,
+			"type": "insert",
+			"payload": [],
+			"payloadFormat": 4,
+			"sql": "INSERT INTO `record` (`location`, `temperature`, `humidity`, `datetime`) VALUES\r\n('Kajang', :{temp}, :{humid}, NOW());"
+		},
+		{
+			"subtype": "sql",
+			"sql": "",
+			"type": "update",
+			"payload": [],
+			"payloadFormat": 4
+		}
+	],
+	"queryContext": {
+		"id": "2",
+		"temp": "12.34",
+		"humid": "82.9"
+	},
+	"eventHandlers": [
+		{
+			"eventId": "EVENT_CODE_LIST",
+			"code": "$sql = 'SELECT * FROM record where location = \"Kajang\"';\n$conn = $dataSource->getConnection();\n$preparedSQL = DB::PrepareConnectionSQL( $conn, $sql );\n$result = $conn->query( $preparedSQL );\nif( !$result ) {\n\t$dataSource->setError( DB::LastError() );\n\treturn false;\n}\n// substitute fields\n$result->setFieldSubstitutions( $dataSource->getFieldSubs( true ) );\n\n// filter results, apply search, security & other filters\n$result = $dataSource->filterResult( $result, $command->filter );\n\n//\treorder results as requested\n$result = $dataSource->reorderResult( $command, $result );\n\n//\tapply pagination\n$result->seekRecord( $command->startRecord );\n\nreturn $result;\n"
+		}
+	],
+	"pages": [
+		{
+			"id": "chart",
+			"type": "chart",
+			"layoutId": "leftbar",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "empty-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "empty-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"left": {
+					"modelId": "leftbar-menu",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c0"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c0": {
+							"model": "c0",
+							"items": [
+								"logo"
+							]
+						},
+						"c1": {
+							"model": "c1",
+							"items": [
+								"menu",
+								"search_panel"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"supertop": {
+					"modelId": "leftbar-top-chart",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"expand_menu_button",
+								"collapse_button",
+								"breadcrumb"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"simple_search",
+								"list_options"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "chart-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"chart"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "list-sidebar-top",
+					"grid": [],
+					"cells": {},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"breadcrumb": {
+					"type": "breadcrumb"
+				},
+				"logo": {
+					"type": "logo"
+				},
+				"menu": {
+					"type": "menu"
+				},
+				"simple_search": {
+					"type": "simple_search"
+				},
+				"search_panel": {
+					"type": "search_panel",
+					"items": [
+						"search_panel_field",
+						"search_panel_field2",
+						"search_panel_field1"
+					],
+					"_flexiblePanel": true
+				},
+				"list_options": {
+					"type": "list_options",
+					"items": [
+						"show_search_panel",
+						"hide_search_panel"
+					]
+				},
+				"show_search_panel": {
+					"type": "show_search_panel"
+				},
+				"hide_search_panel": {
+					"type": "hide_search_panel"
+				},
+				"search_panel_field": {
+					"field": "temp",
+					"type": "search_panel_field"
+				},
+				"search_panel_field1": {
+					"field": "humid",
+					"type": "search_panel_field"
+				},
+				"search_panel_field2": {
+					"field": "id",
+					"type": "search_panel_field"
+				},
+				"chart": {
+					"type": "chart",
+					"table": 2299233748,
+					"icon": {
+						"glyph": "signal"
+					}
+				},
+				"expand_menu_button": {
+					"type": "expand_menu_button"
+				},
+				"collapse_button": {
+					"type": "collapse_button"
+				}
+			},
+			"dbProps": {},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		}
+	],
+	"geoCoding": {
+		"enabled": false,
+		"latField": "",
+		"lonField": "",
+		"addressFields": []
+	},
+	"caption": {
+		"English": "Kajang Chart"
+	}
+}

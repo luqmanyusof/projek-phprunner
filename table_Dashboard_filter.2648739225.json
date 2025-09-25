@@ -1,0 +1,344 @@
+{
+	"type": 4,
+	"name": "Dashboard filter",
+	"shortTableName": "Dashboard_filter",
+	"detailsBadgeColor": "e8926f",
+	"dashSearchFields": [
+		{
+			"refs": [
+				{
+					"table": "record",
+					"field": "id"
+				}
+			],
+			"labels": {
+				"English": "Id"
+			},
+			"field": "record_id",
+			"allFieldsSearch": true
+		},
+		{
+			"refs": [
+				{
+					"table": "record",
+					"field": "location"
+				}
+			],
+			"labels": {
+				"English": "Location"
+			},
+			"field": "record_location",
+			"allFieldsSearch": true
+		},
+		{
+			"refs": [
+				{
+					"table": "record",
+					"field": "temperature"
+				}
+			],
+			"labels": {
+				"English": "Temperature"
+			},
+			"field": "record_temperature",
+			"allFieldsSearch": true
+		},
+		{
+			"refs": [
+				{
+					"table": "record",
+					"field": "humidity"
+				}
+			],
+			"labels": {
+				"English": "Humidity"
+			},
+			"field": "record_humidity",
+			"allFieldsSearch": true
+		},
+		{
+			"refs": [
+				{
+					"table": "record",
+					"field": "datetime"
+				}
+			],
+			"labels": {
+				"English": "Datetime"
+			},
+			"field": "record_datetime",
+			"allFieldsSearch": true
+		},
+		{
+			"refs": [
+				{
+					"table": "record chart",
+					"field": "id"
+				}
+			],
+			"labels": {
+				"English": "Id"
+			},
+			"field": "record_chart_id"
+		},
+		{
+			"refs": [
+				{
+					"table": "record chart",
+					"field": "location"
+				}
+			],
+			"labels": {
+				"English": "Location"
+			},
+			"field": "record_chart_location"
+		},
+		{
+			"refs": [
+				{
+					"table": "record chart",
+					"field": "temperature"
+				}
+			],
+			"labels": {
+				"English": "Temperature"
+			},
+			"field": "record_chart_temperature"
+		},
+		{
+			"refs": [
+				{
+					"table": "record chart",
+					"field": "humidity"
+				}
+			],
+			"labels": {
+				"English": "Humidity"
+			},
+			"field": "record_chart_humidity"
+		},
+		{
+			"refs": [
+				{
+					"table": "record chart",
+					"field": "datetime"
+				}
+			],
+			"labels": {
+				"English": "Datetime"
+			},
+			"field": "record_chart_datetime"
+		}
+	],
+	"pages": [
+		{
+			"id": "dashboard",
+			"type": "dashboard",
+			"layoutId": "leftbar",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"grid": {
+					"modelId": "dashboard-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c"
+								}
+							],
+							"section": ""
+						},
+						{
+							"section": "",
+							"cells": [
+								{
+									"cell": "c2",
+									"colspan": 2
+								}
+							]
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"dashboard-item"
+							]
+						},
+						"c": {
+							"model": "c1",
+							"items": [
+								"dashboard-item1"
+							]
+						},
+						"c2": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"left": {
+					"modelId": "leftbar-dashboard",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c0"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c0": {
+							"model": "c0",
+							"items": [
+								"logo"
+							]
+						},
+						"c1": {
+							"model": "c1",
+							"items": [
+								"menu"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"supertop": {
+					"modelId": "leftbar-top-dashboard",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"expand_menu_button",
+								"collapse_button",
+								"breadcrumb"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"simple_search"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "dashboard-top",
+					"grid": [],
+					"cells": {},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"breadcrumb": {
+					"type": "breadcrumb"
+				},
+				"logo": {
+					"type": "logo"
+				},
+				"menu": {
+					"type": "menu"
+				},
+				"simple_search": {
+					"type": "simple_search"
+				},
+				"expand_menu_button": {
+					"type": "expand_menu_button"
+				},
+				"collapse_button": {
+					"type": "collapse_button"
+				},
+				"dashboard-item": {
+					"type": "dashboard-item",
+					"table": 2603917201,
+					"dashType": 0,
+					"dashName": "record_grid",
+					"bsStyle": "primary",
+					"panelType": 1,
+					"icon": {
+						"fa": "gift"
+					},
+					"viewTab": true,
+					"editTab": true,
+					"addTab": true,
+					"initialTab": 0,
+					"hiddenDetails": {},
+					"detailsOptions": [],
+					"mapUpdateGridWhenMoved": true,
+					"height": "500px"
+				},
+				"dashboard-item1": {
+					"type": "dashboard-item",
+					"table": 2658743394,
+					"dashType": 1,
+					"dashName": "record_chart_chart",
+					"bsStyle": "primary",
+					"panelType": 1,
+					"icon": {
+						"fa": "tag"
+					},
+					"viewTab": true,
+					"editTab": true,
+					"addTab": true,
+					"initialTab": 0,
+					"hiddenDetails": {},
+					"detailsOptions": [],
+					"mapUpdateGridWhenMoved": true,
+					"height": "500px"
+				}
+			},
+			"dbProps": {},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		}
+	],
+	"geoCoding": {
+		"enabled": false,
+		"latField": "",
+		"lonField": "",
+		"addressFields": []
+	},
+	"caption": {
+		"English": "Dashboard filter"
+	}
+}
